@@ -1,0 +1,16 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="240px"
+    android:layout_height="240px"
+    tools:context=".Main" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="App for ZWatch" />
+
+</RelativeLayout>

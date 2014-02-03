@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="240px"
+    android:layout_height="240px"
+    android:background="@android:color/black"
+    android:orientation="vertical" >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:text="Next"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" android:paddingLeft="4dp"/>
+     <TextView
+           android:id="@+id/tv_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:text="10:30"
+        android:gravity="right"
+        android:textColor="@android:color/white"
+        android:textSize="28sp" />
+    <TextView
+          android:id="@+id/tv_coursename"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="2dp"
+        android:text="计算机组成原理"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_address"
+        android:gravity="left|center_vertical"
+        android:text="黄浩川202"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+</LinearLayout>
