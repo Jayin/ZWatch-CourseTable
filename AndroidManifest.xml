@@ -22,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- widget  课程表  -->
+        <!-- widget    -->
         <receiver android:name="com.jayin.coursetable.CourseTableWidget" android:label="课程表" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
