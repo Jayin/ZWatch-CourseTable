@@ -8,6 +8,9 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="17" />
 
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_app"
@@ -22,9 +25,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- widget    -->
-        <receiver android:name="com.jayin.coursetable.CourseTableWidget" android:label="课程表" >
+        <!-- widget -->
+        <receiver
+            android:name="com.jayin.coursetable.CourseTableWidget"
+            android:label="课程表" >
             <intent-filter>
+                <action android:name="Action_Course_Change" />
+                <action android:name="Current_Week_Change" />
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="android.intent.action.TIME_SET" />
                 <action android:name="android.intent.action.TIME_TICK" />

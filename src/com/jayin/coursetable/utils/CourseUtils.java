@@ -38,16 +38,16 @@ public class CourseUtils {
      * @param l
      * @return
      */
-//	public static boolean isLessonStart(Context context, Lesson l) {
-//		Calendar c = CalendarManager.getCalendar();
-//		int currentWeek = ETipsUtils.getCurrentWeek(context);
-//		Set<Integer> set = null;
-//		if (l.Time != null && !l.Time.equals(""))
-//			set = StringUtils.parseTimeOfLesson(l.Time);
-//		if (set != null && set.contains(currentWeek))
-//			return true;
-//		return false;
-//	}
+	public static boolean isLessonStart(Context context, Lesson l) {
+		Calendar c = CalendarManager.getCalendar();
+		int currentWeek = Preferences.getCurrentWeek(context);
+		Set<Integer> set = null;
+		if (l.Time != null && !l.Time.equals(""))
+			set = StringUtils.parseTimeOfLesson(l.Time);
+		if (set != null && set.contains(currentWeek))
+			return true;
+		return false;
+	}
 
 }
 

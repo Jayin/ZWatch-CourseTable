@@ -1,16 +1,36 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="240px"
-    android:layout_height="240px"
-    tools:context=".Main" >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black" >
 
-    <TextView
-        android:id="@+id/textView1"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:text="App for ZWatch" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
 
-</RelativeLayout>
+        <TextView
+            style="@style/TextView.white"
+            android:background="@android:color/black"
+            android:gravity="center"
+            android:text="App for ZWatch"
+            android:textSize="20sp" />
+
+        <View style="@style/Line_White" />
+
+        <Button
+            android:id="@+id/btn_getCourse"
+            style="@style/Button"
+            android:text="获取课表" />
+
+        <View style="@style/Line_White" />
+
+        <Button
+            android:id="@+id/btn_about"
+            style="@style/Button"
+            android:text="关于软件" />
+
+        <View style="@style/Line_White" />
+    </LinearLayout>
+
+</ScrollView>

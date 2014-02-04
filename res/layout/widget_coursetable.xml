@@ -6,6 +6,7 @@
     android:orientation="vertical" >
 
     <TextView
+        android:id="@+id/tv_dayPart"
         style="@style/TextView.white"
         android:layout_marginLeft="2dp"
         android:paddingLeft="4dp"
@@ -18,41 +19,54 @@
         android:gravity="right"
         android:text="10:30"
         android:textSize="28sp" />
-
     <TextView
-        android:id="@+id/tv_coursename1"
-         style="@style/TextView.white"
-        android:layout_height="0dp"
+        android:id="@+id/tv_nocourse"
+        style="@style/TextView.white"
         android:layout_marginLeft="2dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="计算机组成原理"
-        android:textSize="18sp" />
+       android:gravity="center"
+        android:text="无 课"
+        android:textSize="30sp" />
+    <LinearLayout
+        android:id="@+id/linly_course"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" android:visibility="gone">
 
-    <TextView
-        android:id="@+id/tv_address1"
-       style="@style/TextView.white"
-        android:drawableLeft="@drawable/ic_address"
-        android:gravity="left|center_vertical"
-        android:text="黄浩川202"
-        android:textSize="16sp" />
-     <TextView
-        android:id="@+id/tv_coursename2"
-         style="@style/TextView.white"
-        android:layout_height="0dp"
-        android:layout_marginLeft="2dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="计算机组成原理"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_coursename1"
+            style="@style/TextView.white"
+            android:layout_height="0dp"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="计算机组成原理"
+            android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/tv_address2"
-       style="@style/TextView.white"
-        android:drawableLeft="@drawable/ic_address"
-        android:gravity="left|center_vertical"
-        android:text="黄浩川202"
-        android:textSize="16sp" />
-    
+        <TextView
+            android:id="@+id/tv_address1"
+            style="@style/TextView.white"
+            android:drawableLeft="@drawable/ic_address"
+            android:gravity="left|center_vertical"
+            android:text="黄浩川202"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_coursename2"
+            style="@style/TextView.white"
+            android:layout_height="0dp"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="计算机组成原理"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_address2"
+            style="@style/TextView.white"
+            android:drawableLeft="@drawable/ic_address"
+            android:gravity="left|center_vertical"
+            android:text="黄浩川202"
+            android:textSize="16sp" />
+    </LinearLayout>
 
 </LinearLayout>
