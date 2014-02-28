@@ -1,4 +1,4 @@
 ZWatch-CourseTable
 ==================
 
-CourseTable is  app for my ZWatch
+CourseTable is the app for my ZWatch
