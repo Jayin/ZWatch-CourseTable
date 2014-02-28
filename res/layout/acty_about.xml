@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/TextView.white"
+        android:background="@android:color/black"
+        android:gravity="center"
+        android:text="App for ZWatch"
+        android:textSize="20sp" />
+
+    <View style="@style/Line_White" />
+
+    <TextView
+        style="@style/TextView.white"
+        android:background="@android:color/black"
+        android:gravity="center"
+        android:text="Author : @Jayin_Ton"
+        android:textSize="18sp" />
+
+    <TextView
+        style="@style/TextView.white"
+        android:background="@android:color/black"
+        android:gravity="center"
+        android:text="Open-Source in GitHub"
+        android:textSize="18sp" />
+
+</LinearLayout>

@@ -13,8 +13,14 @@ import com.jayin.coursetable.utils.CourseTableInfo;
 import com.jayin.coursetable.utils.DataPool;
 import com.jayin.coursetable.utils.ZWatchContants;
 
+/**
+ * Main Page
+ * 
+ * @author Jayin Ton
+ * 
+ */
 public class Main extends BaseActivity {
-	private String userID = "3112002722", userPsw = "931127";
+	private String userID = "", userPsw = "";// 子系统帐密
 	private View btn_getCourse, btn_about;
 	private Course course;
 
@@ -47,16 +53,11 @@ public class Main extends BaseActivity {
 			getCourse();
 			break;
 		case R.id.btn_about:
-			send();
-			toast("broadcast has been send!");
+			openActivity(About.class);
 			break;
 		default:
 			break;
 		}
-	}
-
-	private void send() {
-		sendBroadcast(new Intent(ZWatchContants.Action_Course_Change));
 	}
 
 	private void getCourse() {
