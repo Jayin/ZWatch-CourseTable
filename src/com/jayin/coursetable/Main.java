@@ -1,7 +1,14 @@
 package com.jayin.coursetable;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -21,8 +28,9 @@ import com.jayin.coursetable.utils.ZWatchContants;
  */
 public class Main extends BaseActivity {
 	private String userID = "", userPsw = "";// 子系统帐密
-	private View btn_getCourse, btn_about;
 	private Course course;
+	private String filePath = Environment.getExternalStorageDirectory()
+			.getAbsolutePath() + File.separator + "data.properties";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +47,9 @@ public class Main extends BaseActivity {
 
 	@Override
 	protected void initLayout() {
-		btn_getCourse = _getView(R.id.btn_getCourse);
-		btn_about = _getView(R.id.btn_about);
-
-		btn_getCourse.setOnClickListener(this);
-		btn_about.setOnClickListener(this);
+		_getView(R.id.btn_getCourse).setOnClickListener(this);
+		_getView(R.id.btn_about).setOnClickListener(this);
+		_getView(R.id.btn_clear).setOnClickListener(this);
 	}
 
 	@Override
@@ -54,6 +60,10 @@ public class Main extends BaseActivity {
 			break;
 		case R.id.btn_about:
 			openActivity(About.class);
+			break;
+		case R.id.btn_clear:
+			CourseTableInfo.removeAll(getContext());
+			toast("已清除");
 			break;
 		default:
 			break;
@@ -69,13 +79,13 @@ public class Main extends BaseActivity {
 			public void handleMessage(Message msg) {
 				switch (msg.what) {
 				case start:
-					toast("start to get course !");
+					toast("正在登录获取课表");
 					break;
 				case faild:
 					toast((String) msg.obj);
 					break;
 				case ok:
-					toast("ok!");
+					toast("课表获取成功！");
 					CourseTableInfo.setCourse(getContext(), course);
 					break;
 				default:
@@ -90,9 +100,24 @@ public class Main extends BaseActivity {
 				@Override
 				public void run() {
 					h.sendEmptyMessage(start);
-					SubSystemAPI api = new SubSystemAPI(userID, userPsw);
 					Message msg = h.obtainMessage();
 					msg.what = faild;
+				
+					Properties p = new Properties();
+					try {
+						p.load(new FileInputStream(new File(filePath)));
+						userID = p.getProperty("id");
+						userPsw = p.getProperty("password");
+					} catch (FileNotFoundException e1) {
+						e1.printStackTrace();
+						msg.obj = "没有配置文件";
+						h.sendMessage(msg);
+					} catch (IOException e1) {
+						e1.printStackTrace();
+						msg.obj = "数据传输出错";
+						h.sendMessage(msg);
+					}
+					SubSystemAPI api = new SubSystemAPI(userID, userPsw);
 					try {
 						if (api.login()) {
 							course = Course.translateData(api.getLessons());

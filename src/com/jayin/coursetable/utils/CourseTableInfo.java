@@ -15,4 +15,8 @@ public class CourseTableInfo {
 		return (Course) new DataPool(ZWatchContants.SP_Name_Course, context)
 				.get(ZWatchContants.SP_Key_Course);
 	}
+    //removeAll all
+	public static void removeAll(Context context) {
+		new DataPool(ZWatchContants.SP_Name_Course, context).removeAll();
+	}
 }

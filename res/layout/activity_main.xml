@@ -26,6 +26,13 @@
         <View style="@style/Line_White" />
 
         <Button
+            android:id="@+id/btn_clear"
+            style="@style/Button"
+            android:text="清空课表" />
+
+        <View style="@style/Line_White" />
+
+        <Button
             android:id="@+id/btn_about"
             style="@style/Button"
             android:text="关于软件" />
